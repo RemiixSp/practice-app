@@ -6,6 +6,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { TodoState, Task, Status } from './types';
 // import { getTasksFromLS } from '../../utils/getTasksFromLS';
 import { getPinOrUnpinTask, getFilteredTask, findById } from './utils';
+import { getTasksFromLS } from './getTasksFromLS';
 
 const initialState: TodoState = {
   listedTasks: [],
@@ -16,18 +17,18 @@ export const todoSlice = createSlice({
   name: 'todo',
   initialState,
   reducers: {
-    // inizialization: (state) => {
-    //   const { listedTasks, doneTasks } = getTasksFromLS();
+    inizialization: (state) => {
+      const { listedTasks, doneTasks } = getTasksFromLS();
 
-    //   return {
-    //     ...state,
-    //     listedTasks,
-    //     doneTasks,
-    //   };
-    // },
+      return {
+        ...state,
+        listedTasks,
+        doneTasks,
+      };
+    },
 
     addTask: (state, action: PayloadAction<Task>) => {
-      const listedTasks = [...state.listedTasks, action.payload];
+      const listedTasks: Task[] = [...state.listedTasks, action.payload];
       const json = JSON.stringify({ listedTasks, doneTasks: state.doneTasks });
       localStorage.setItem('todos', json);
 
@@ -79,7 +80,12 @@ export const todoSlice = createSlice({
   },
 });
 
-export const { addTask, finishTask, deleteTaskFromStorage, pinTask } =
-  todoSlice.actions;
+export const {
+  addTask,
+  finishTask,
+  deleteTaskFromStorage,
+  pinTask,
+  inizialization,
+} = todoSlice.actions;
 
 export default todoSlice.reducer;

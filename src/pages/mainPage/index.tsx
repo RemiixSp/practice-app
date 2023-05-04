@@ -5,13 +5,17 @@ import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import TodoBlock from '../../components/todoBlock';
 import { RootState, useAppSelector } from '../../redux/store';
-import { addTask } from '../../redux/todo';
+import { addTask, inizialization } from '../../redux/todo';
 import styles from './mainPage.module.scss';
 import { Status } from '../../redux/todo/types';
 
 const MainPage: React.FC = () => {
   const todos = useAppSelector((state: RootState) => state.todo);
   const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(inizialization());
+  }, []);
 
   const [todoTask, setTodoTask] = useState('');
 
