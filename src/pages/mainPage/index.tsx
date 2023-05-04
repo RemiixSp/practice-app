@@ -56,6 +56,15 @@ const MainPage: React.FC = () => {
               </div>
             </div>
           )}
+          {todos.doneTasks && todos.doneTasks.length > 0 && (
+            <div className={styles.allTodosContainer}>
+              <h3>Here is your done tasks</h3>
+              <div className={styles.allTodos}>
+                {todos.doneTasks &&
+                  todos.doneTasks.map((task) => <TodoBlock {...task} />)}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

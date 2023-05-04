@@ -39,24 +39,24 @@ const TodoBlock: React.FC<TodoBlockProps> = ({ id, description, status }) => {
       {status === Status.PINNED && <p className={styles.pinnedText}>pinned</p>}
 
       <div className={styles.textTodo}>
-        <p>{description}</p>
+        <p
+          className={classNames({ [styles.finished]: status === Status.DONE })}
+        >
+          {description}
+        </p>
       </div>
       <div className={styles.icons}>
-        <DoneSvg
-          onClick={onFinishTaskClick}
-          className={styles.icon}
-          width={15}
-          height={15}
-        />
-        {status === Status.LISTED ? (
-          <PinSvg
-            onClick={onPinTaskClick}
+        {status !== Status.DONE && (
+          <DoneSvg
+            onClick={onFinishTaskClick}
             className={styles.icon}
             width={15}
             height={15}
           />
-        ) : (
-          <UnpinSvg
+        )}
+
+        {status === Status.LISTED && (
+          <PinSvg
             onClick={onPinTaskClick}
             className={styles.icon}
             width={15}
@@ -64,6 +64,14 @@ const TodoBlock: React.FC<TodoBlockProps> = ({ id, description, status }) => {
           />
         )}
 
+        {status === Status.PINNED && (
+          <UnpinSvg
+            onClick={onPinTaskClick}
+            className={styles.icon}
+            width={15}
+            height={15}
+          />
+        )}
         <DeleteSvg
           onClick={onDeleteTaskClick}
           className={styles.icon}
