@@ -1,0 +1,25 @@
+@use '../../style/variables';
+
+.wrapper {
+  width: 100%;
+  background-color: variables.$brown;
+  border-radius: 0 0 25px 25px;
+}
+.container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.flexOnLogoAndName {
+  display: flex;
+  align-items: center;
+
+  .headerTextContainer {
+    margin-left: 5px;
+
+    h3 {
+      color: variables.$lightCream;
+    }
+  }
+}
