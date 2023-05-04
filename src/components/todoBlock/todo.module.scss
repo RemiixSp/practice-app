@@ -2,6 +2,7 @@
 
 .todoCotainer {
   width: 47%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   min-height: 100px;
   background-color: variables.$brown;
   border-radius: 15px;
@@ -14,6 +15,12 @@
     p {
       color: #fff;
     }
+  }
+  .pinnedText {
+    position: absolute;
+    font-size: 10px;
+    top: 3px;
+    left: 80%;
   }
 
   .icons {
@@ -31,5 +38,13 @@
         fill: #000;
       }
     }
+  }
+}
+
+.pinnedTask {
+  background: variables.$lightGreen;
+  border: 2px solid variables.$brown;
+  p {
+    color: #000 !important;
   }
 }

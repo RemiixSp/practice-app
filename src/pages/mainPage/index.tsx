@@ -24,6 +24,7 @@ const MainPage: React.FC = () => {
     };
     if (!todos.listedTasks?.find((obj) => obj.description === todoTask)) {
       dispatch(addTask(newTodo));
+      setTodoTask('');
     }
   };
   return (
