@@ -1,0 +1,53 @@
+@use '../../style/variables';
+
+.todoCotainer {
+  width: 47%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  min-height: 100px;
+  background-color: variables.$brown;
+  border-radius: 15px;
+  padding: 10px;
+  padding-right: 30px;
+  margin-bottom: 15px;
+  position: relative;
+
+  .textTodo {
+    p {
+      color: #fff;
+    }
+    .finished {
+      text-decoration: line-through;
+    }
+  }
+  .pinnedText {
+    position: absolute;
+    font-size: 10px;
+    top: 3px;
+    left: 80%;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    justify-content: space-between;
+    position: absolute;
+    top: 15px;
+    left: 90%;
+
+    .icon {
+      &:hover {
+        cursor: pointer;
+        fill: #000;
+      }
+    }
+  }
+}
+
+.pinnedTask {
+  background: variables.$lightGreen;
+  border: 2px solid variables.$brown;
+  p {
+    color: #000 !important;
+  }
+}

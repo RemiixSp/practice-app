@@ -1,0 +1,62 @@
+@use '../../style/variables';
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.todoContainer {
+  max-width: 500px;
+
+  .inputContainer {
+    margin-top: 10px;
+    textArea {
+      resize: none;
+      width: 100%;
+      padding: 15px;
+      border-radius: 15px;
+      border: 3px solid variables.$brown;
+      font-size: 14px;
+    }
+    .addTaskContainer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      button {
+        width: 120px;
+        color: #fff;
+        background-color: variables.$greenConfirm;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.6s;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+        &:hover {
+          background-color: variables.$greenConfirmHover;
+        }
+      }
+    }
+  }
+
+  .allTodosContainer {
+    margin-top: 35px;
+    width: 100%;
+
+    .allTodos {
+      margin-top: 5px;
+      background-color: variables.$cream;
+      border-radius: 15px;
+      border: 3px solid variables.$brown;
+      padding: 0 10px;
+      padding-top: 15px;
+
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}
