@@ -8,6 +8,7 @@ import { RootState, useAppSelector } from '../../redux/store';
 import { addTask, inizialization } from '../../redux/todo';
 import styles from './mainPage.module.scss';
 import { Status } from '../../redux/todo/types';
+import DogWidget from '../../components/dogPhoto';
 
 const MainPage: React.FC = () => {
   const todos = useAppSelector((state: RootState) => state.todo);
@@ -69,6 +70,9 @@ const MainPage: React.FC = () => {
               </div>
             </div>
           )}
+        </div>
+        <div className={styles.widgets}>
+          <DogWidget />
         </div>
       </div>
     </div>
