@@ -2,9 +2,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import todosReducer from './todo';
+import dog from './dog';
 
 export const store = configureStore({
-  reducer: { todo: todosReducer },
+  reducer: { todo: todosReducer, dog },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
