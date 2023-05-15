@@ -1,15 +1,16 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable object-curly-newline */
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import todosReducer from './todo';
 import dog from './dog';
+import facts from './facts';
+import ipFinder from './ipFinder';
+import weather from './weather';
 
 export const store = configureStore({
-  reducer: { todo: todosReducer, dog },
+  reducer: { todo: todosReducer, dog, facts, ipFinder, weather },
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
