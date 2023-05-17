@@ -16,7 +16,16 @@ const IpWidget: React.FC = () => {
     try {
       dispatch(fetchIp({ ip: inputVal }));
       if (ip.ipInfo.city === undefined) {
-        toast.error('Not correct ip andress');
+        toast.error('Not correct ip andress', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
       }
     } catch (error) {
       toast.error('Error while getting ip');
@@ -26,7 +35,7 @@ const IpWidget: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <ToastContainer />
+      <ToastContainer position='top-right' />
       <div className={styles.header}>
         <h3>Find by id</h3>
       </div>
