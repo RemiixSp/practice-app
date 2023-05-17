@@ -1,0 +1,32 @@
+@use '../../style/variables';
+
+.container {
+  width: 47%;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: variables.$brown;
+
+  .header {
+    text-align: center;
+
+    h3 {
+      color: #fff;
+    }
+  }
+
+  .taskContainer {
+    margin: 10px 0;
+    min-height: 50px;
+
+    p {
+      background-color: variables.$lightCream;
+      border-radius: 5px;
+      padding: 5px;
+    }
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+  }
+}

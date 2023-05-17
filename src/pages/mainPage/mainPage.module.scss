@@ -5,8 +5,24 @@
   margin: 0 auto;
 }
 
+.flexOnTodoAndWidgets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.widgets {
+  align-self: start;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: variables.$lightGreen;
+}
+
 .todoContainer {
-  max-width: 500px;
+  width: 500px;
 
   .inputContainer {
     margin-top: 10px;

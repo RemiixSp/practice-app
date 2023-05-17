@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Routing from './boot/router';
 import Header from './components/header';
 import { store } from './redux/store';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const App: React.FC = () => (
   <Provider store={store}>

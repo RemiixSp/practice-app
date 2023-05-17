@@ -1,0 +1,61 @@
+@use '../../style/variables';
+
+.factsWidget {
+  h3,
+  p {
+    color: #fff;
+  }
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: variables.$cream;
+
+  border-radius: 10px;
+  margin-bottom: 15px;
+
+  .catFacts {
+    // margin: 10px 0;
+    padding: 10px;
+    height: 230px;
+    width: 48%;
+
+    .randomFact {
+      background-color: variables.$brown;
+      padding: 5px;
+      border-radius: 5px;
+      margin-top: 10px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+
+  .breedTypes {
+    width: 48%;
+    margin: 10px 0;
+
+    overflow: auto;
+    height: 230px;
+
+    @media (max-width: 680px) {
+      width: 95%;
+    }
+
+    .breedsHeadere {
+      text-align: center;
+    }
+
+    .allBreeds {
+      margin-top: 10px;
+
+      .breedList {
+        .eachBreed {
+          background-color: variables.$brown;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          border-radius: 7px;
+          margin-bottom: 15px;
+          padding: 5px 5px;
+        }
+      }
+    }
+  }
+}

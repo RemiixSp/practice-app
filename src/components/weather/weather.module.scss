@@ -1,0 +1,96 @@
+@use '../../style/variables';
+
+.weatherWidget {
+  width: 100%;
+  height: 200px;
+  overflow: scroll;
+  background-color: variables.$lightCream;
+  border-radius: 10px;
+  border: 2px solid variables.$brown;
+
+  margin-bottom: 15px;
+  .weatherHeader {
+    text-align: center;
+
+    padding-top: 15px;
+  }
+
+  .weatherInfo {
+    .mainInfo {
+      padding: 0 5%;
+      margin-bottom: 15px;
+      .listOfWeather {
+        flex-wrap: wrap;
+
+        .additionalInfo {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+
+        .mainTemp {
+          padding: 10px 3%;
+
+          max-width: 25%;
+          font-size: 1.2rem;
+          font-weight: 600;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          border-radius: 10px;
+          background-color: variables.$lightGreen;
+        }
+
+        .eachAdditionalProp {
+          padding: 7px 5px;
+          margin-right: 10px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          width: 30%;
+          background-color: variables.$cream;
+          border-radius: 5px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          @media (max-width: 660px) {
+            width: 47%;
+          }
+          @media (max-width: 480px) {
+            width: 100%;
+          }
+        }
+        .humidity {
+          width: 47%;
+          background-color: variables.$cream;
+
+          @media (max-width: 465px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .windInfo {
+      padding: 0 5%;
+      margin-bottom: 20px;
+      ul {
+        all: unset;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+        li {
+          width: 48%;
+
+          background-color: #97ddfc;
+          padding: 10px 20px;
+          border-radius: 10px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          @media (max-width: 460px) {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,22 @@
 import React from 'react';
+import { Button } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import styles from './header.module.scss';
 import { ReactComponent as Logo } from '../../resources/imgs/logo.svg';
+import { RootState, useAppSelector } from '../../redux/store';
+import { signOut } from '../../redux/authorization';
 
 const Header: React.FC = () => {
-  const a = 5;
+  const { authorization } = useAppSelector((state: RootState) => state);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onSignOutClick = (): void => {
+    dispatch(signOut());
+    navigate('/login');
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -13,6 +26,14 @@ const Header: React.FC = () => {
             <h3>Your best todo app</h3>
           </div>
         </div>
+        {authorization.isAuthorized && (
+          <div className={styles.authHeader}>
+            <p>{authorization.userName}</p>
+            <Button onClick={onSignOutClick} variant='contained' color='error'>
+              Signout
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
