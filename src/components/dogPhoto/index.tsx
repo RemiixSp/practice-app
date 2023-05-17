@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';

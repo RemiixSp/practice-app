@@ -1,10 +1,8 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable operator-linebreak */
-/* eslint-disable consistent-return */
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { TodoState, Task, Status } from './types';
-// import { getTasksFromLS } from '../../utils/getTasksFromLS';
 import { getPinOrUnpinTask, getFilteredTask, findById } from './utils';
 import { getTasksFromLS } from './getTasksFromLS';
 
@@ -53,6 +51,7 @@ export const todoSlice = createSlice({
           doneTasks,
         };
       }
+      return state;
     },
 
     deleteTaskFromStorage: (state, action: PayloadAction<string>) => {

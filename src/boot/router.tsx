@@ -1,5 +1,4 @@
 /* eslint-disable object-curly-newline */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';

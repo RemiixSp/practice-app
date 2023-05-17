@@ -12,8 +12,9 @@
 
 .widgets {
   align-self: start;
-  width: 45%;
+  width: 50%;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   border-radius: 15px;
   padding: 15px;
