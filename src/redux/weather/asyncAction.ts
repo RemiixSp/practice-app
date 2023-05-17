@@ -11,7 +11,7 @@ export const fetchWeather = createAsyncThunk<
   const { lat, lon } = params;
 
   const { data } = await axios.get<FetchWeatherType>(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=a82b9cf0093d3518f69744e22d3a4e54`,
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=aeff975321105b04fbc5bea603568d18`,
   );
   return {
     ...data,

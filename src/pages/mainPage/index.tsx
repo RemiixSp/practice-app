@@ -11,6 +11,7 @@ import { Status } from '../../redux/todo/types';
 import DogWidget from '../../components/dogPhoto';
 import IpWidget from '../../components/ipInfoWidget';
 import CatFacts from '../../components/catFactWidget';
+import Weather from '../../components/weather';
 
 const MainPage: React.FC = () => {
   const todos = useAppSelector((state: RootState) => state.todo);
@@ -77,6 +78,7 @@ const MainPage: React.FC = () => {
           <DogWidget />
           <IpWidget />
           <CatFacts />
+          <Weather />
         </div>
       </div>
     </div>
