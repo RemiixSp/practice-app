@@ -6,6 +6,7 @@ import facts from './facts';
 import ipFinder from './ipFinder';
 import weather from './weather';
 import bored from './bored';
+import authorization from './authorization';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     ipFinder,
     weather,
     bored,
+    authorization,
   },
 });
 

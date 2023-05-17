@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+import { useNavigate } from 'react-router-dom';
 import TodoBlock from '../../components/todoBlock';
 import { RootState, useAppSelector } from '../../redux/store';
 import { addTask, inizialization } from '../../redux/todo';
@@ -16,10 +17,15 @@ import BoredWidget from '../../components/boredWidget';
 
 const MainPage: React.FC = () => {
   const todos = useAppSelector((state: RootState) => state.todo);
+  const auth = useAppSelector((state: RootState) => state.authorization);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     dispatch(inizialization());
+    if (auth && !auth.isAuthorized) {
+      navigate('/login');
+    }
   }, []);
 
   const [todoTask, setTodoTask] = useState('');
@@ -48,6 +54,9 @@ const MainPage: React.FC = () => {
       setTodoTask('');
     }
   };
+
+  if (!auth.isAuthorized) return null;
+
   return (
     <div className={styles.container}>
       <div className={styles.flexOnTodoAndWidgets}>
