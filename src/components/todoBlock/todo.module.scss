@@ -12,11 +12,20 @@
   position: relative;
 
   .textTodo {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     p {
       color: #fff;
     }
     .finished {
       text-decoration: line-through;
+    }
+    .date {
+      color: variables.$lightCream;
+      font-size: 10px;
+      font-weight: bold;
     }
   }
   .pinnedText {
@@ -50,4 +59,8 @@
   p {
     color: #000 !important;
   }
+}
+
+.dateOfCreation {
+  margin-top: auto;
 }

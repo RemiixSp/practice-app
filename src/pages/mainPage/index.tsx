@@ -7,7 +7,7 @@ import TodoBlock from '../../components/todoBlock';
 import { RootState, useAppSelector } from '../../redux/store';
 import { addTask, inizialization } from '../../redux/todo';
 import styles from './mainPage.module.scss';
-import { Status } from '../../redux/todo/types';
+import { Status, Task } from '../../redux/todo/types';
 import DogWidget from '../../components/dogPhoto';
 import IpWidget from '../../components/ipInfoWidget';
 import CatFacts from '../../components/catFactWidget';
@@ -24,10 +24,22 @@ const MainPage: React.FC = () => {
 
   const [todoTask, setTodoTask] = useState('');
 
+  const getCurrentDate = (separator = '-'): string => {
+    const newDate = new Date();
+    const date = newDate.getDate();
+    const month = newDate.getMonth() + 1;
+    const year = newDate.getFullYear();
+
+    return `${year}${separator}${
+      month < 10 ? `0${month}` : `${month}`
+    }${separator}${date}`;
+  };
+
   const onAddNewTask = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const newTodo = {
+    const newTodo: Task = {
       id: nanoid(),
+      dateOfAdding: getCurrentDate(),
       description: todoTask,
       status: Status.LISTED,
     };

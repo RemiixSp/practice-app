@@ -14,9 +14,15 @@ interface TodoBlockProps {
   id: string;
   description: string;
   status: Status;
+  dateOfAdding: string;
 }
 
-const TodoBlock: React.FC<TodoBlockProps> = ({ id, description, status }) => {
+const TodoBlock: React.FC<TodoBlockProps> = ({
+  id,
+  description,
+  status,
+  dateOfAdding,
+}) => {
   const dispatch = useDispatch();
 
   const onFinishTaskClick = (): void => {
@@ -43,7 +49,11 @@ const TodoBlock: React.FC<TodoBlockProps> = ({ id, description, status }) => {
         >
           {description}
         </p>
+        <div className={styles.dateOfCreation}>
+          <p className={styles.date}>{dateOfAdding}</p>
+        </div>
       </div>
+
       <div className={styles.icons}>
         {status !== Status.DONE && (
           <DoneSvg
