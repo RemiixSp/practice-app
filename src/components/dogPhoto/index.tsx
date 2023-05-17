@@ -14,7 +14,7 @@ const DogWidget: React.FC = () => {
     try {
       dispatch(fetchDog());
     } catch (error) {
-      toast.error('Error while getting pizzas');
+      toast.error('Error while getting dogs');
     }
   };
 

@@ -12,6 +12,7 @@ import DogWidget from '../../components/dogPhoto';
 import IpWidget from '../../components/ipInfoWidget';
 import CatFacts from '../../components/catFactWidget';
 import Weather from '../../components/weather';
+import BoredWidget from '../../components/boredWidget';
 
 const MainPage: React.FC = () => {
   const todos = useAppSelector((state: RootState) => state.todo);
@@ -79,6 +80,7 @@ const MainPage: React.FC = () => {
           <IpWidget />
           <CatFacts />
           <Weather />
+          <BoredWidget />
         </div>
       </div>
     </div>
